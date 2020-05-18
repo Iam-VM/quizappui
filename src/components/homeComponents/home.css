@@ -1,0 +1,157 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap');
+
+.home {
+    display : flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    flex-wrap : nowrap;
+    text-decoration: none;
+    outline: none;
+}
+
+.home-navBar {
+    text-decoration: none;
+    outline: none;
+    order : 1;
+}
+
+.navBar {
+    display : flex;
+    flex-direction: row;
+    justify-content: space-between;
+    height : 6vh;
+    width : 100%;
+    margin-top : 3vh;
+    text-decoration: none;
+    outline: none;
+}
+
+.navBar-logo {
+    color: #D3D5D6;
+    letter-spacing : 0.07rem;
+    text-decoration : none;
+    outline : none;
+    transition : all 0.2s;
+    padding : 0.4rem 0.9rem;
+    font-size: 5vh;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+}
+
+.a {
+    text-decoration: none;
+    outline: none;
+}
+
+
+.signInButton{
+    margin-left : 2vh;
+    margin-right : 2vh;
+    height : 7vh;
+    font-weight : 600;
+    color : #F6F8FA;
+    width : 25vh;
+    background-color :#F36D1A;
+    cursor : pointer;
+    border-radius : 1rem;
+    display : flex;
+    flex-direction : row;
+    flex-wrap : wrap;
+    justify-content : center;
+    align-items: center;
+    align-content: center;
+    transition : all 0.2s;
+    text-decoration: none;
+    outline: none;
+}
+
+.signInButton-logo{
+    margin-right: 0.5rem;
+    height : 4vh;
+    width : 4vw;
+    color : #D3D5D6;
+    text-decoration: none;
+    outline: none;
+}
+
+.signInButton-text{
+    margin-right: 0.5rem;
+    color : #D3D5D6;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+    text-decoration: none;
+    outline: none;
+}
+
+.bodyText {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    align-content: flex-start;
+    margin-top: 4rem;
+    margin-left : 1.5rem;
+}
+
+.bodyText-div-head {
+    display:flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    align-content: flex-start;
+    padding-bottom: 0rem;
+}
+
+.bodyText-head-online {
+    margin : 0px;
+    padding: 0px;
+    color: #D3D5D6;
+    letter-spacing : 0.07rem;
+    text-decoration : none;
+    outline : none;
+    transition : all 0.2s;
+    font-size: 10vh;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: lighter;
+}
+
+.bodyText-head-quiz {
+    margin: 0px;
+    padding: 0px;
+    color: #D3D5D6;
+    letter-spacing : 0.07rem;
+    text-decoration : none;
+    outline : none;
+    transition : all 0.2s;
+    font-size: 10vh;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: lighter;
+}
+
+
+.underLine {
+    margin-left:0.4rem;
+    border : none;
+    display : block;
+    width : 50%;
+    background-color : #D3D5D6;
+    height : 1px;
+}
+
+.bodyText-byLine {
+    margin-top: 7px;
+    margin-left : 0.5rem;
+    color: #D3D5D6;
+    letter-spacing : 0.07rem;
+    text-decoration : none;
+    outline : none;
+    transition : all 0.2s;
+    font-size: 3vh;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: normal;
+}
+
+.home-signInButtonLarge {
+    margin: 2rem 2rem 4rem 4rem;
+}
+

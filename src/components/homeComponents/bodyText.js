@@ -4,7 +4,12 @@ import UnderLine from './underLine';
 const BodyText = (props) => {
     return(
         <div className={'bodyText'}>
-
+            <div className={'bodyText-div-head'}>
+                <h2 className={'bodyText-head-online'}>Online</h2>
+                <h2 className={'bodyText-head-quiz'}>Quiz</h2>
+            </div>
+            <UnderLine />
+            <h4 className={'bodyText-byLine'}>Some text goes here</h4>
         </div>
     );
 };
