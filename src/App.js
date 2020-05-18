@@ -1,26 +1,32 @@
 import React from 'react';
-import logo from './logo.svg';
+import {BrowserRouter, Route, Switch} from 'react-router-dom';
 import './App.css';
+import Home from './components/home';
+import Play from './components/play';
+import ThankYou from './components/thankYou';
+import LimitExceeded from './components/limitExceeded';
+import ErrorNotFound from './components/errorNotFound';
 
-function App() {
+
+const setBodyStyles = () => {
+  document.body.classList.add('body');
+};
+
+const App = () => {
+  setBodyStyles();
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <BrowserRouter>
+        <Switch>
+          <Route path='/' component={Home} exact />
+          <Route path='/quiz/play' component={Play} exact />
+          <Route path={'/thankyou'} component={ThankYou} exact />
+          <Route path={'/limitexceeded'} component={LimitExceeded} exact />
+          <Route component={ErrorNotFound} />
+        </Switch>
+      </BrowserRouter>
     </div>
   );
-}
+};
 
 export default App;
