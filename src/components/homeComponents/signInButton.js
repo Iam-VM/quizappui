@@ -3,9 +3,9 @@ import {FaGoogle} from 'react-icons/fa';
 
 const SignInButton = (props) => {
     return(
-        <div className={'signInButton'}>
-            <FaGoogle className='signInButton-logo' />
-            <p className={'signInButton-text'}>Sign In</p>
+        <div className={'button'}>
+            <FaGoogle className='button-logo' />
+            <p className={'button-text'}>Sign In</p>
         </div>
     );
 };

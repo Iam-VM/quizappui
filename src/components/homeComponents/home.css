@@ -44,7 +44,7 @@
 }
 
 
-.signInButton{
+.button{
     margin-left : 2vh;
     margin-right : 2vh;
     height : 7vh;
@@ -65,7 +65,7 @@
     outline: none;
 }
 
-.signInButton-logo{
+.button-logo{
     margin-right: 0.5rem;
     height : 4vh;
     width : 4vw;
@@ -74,7 +74,7 @@
     outline: none;
 }
 
-.signInButton-text{
+.button-text{
     margin-right: 0.5rem;
     color : #D3D5D6;
     font-family: 'Montserrat', sans-serif;
