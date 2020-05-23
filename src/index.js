@@ -5,25 +5,22 @@ import * as serviceWorker from './serviceWorker';
 import {Provider} from 'react-redux';
 import {ApolloProvider} from 'react-apollo';
 import ApolloClient from 'apollo-boost';
-import store from './redux/store';
 
 //TODO: do change this during production
-const API_DEV = 'http://localhost:4001/api';
-const API_PROD = 'https://quizapp-server.herokuapp.com/api';
+const API_DEV = 'http://localhost:4001/iamvmgraphqlapi';
+const API_PROD = 'https://quizapp-server.herokuapp.com/iamvmgraphqlapi';
 
 //apollo setup
 const client = new ApolloClient({
-  uri : API_DEV
+  uri : API_PROD
 });
 
 
 ReactDOM.render(
   <React.StrictMode>
-    <Provider store={store}>
         <ApolloProvider client={client}>
             <App />
         </ApolloProvider>
-    </Provider>
   </React.StrictMode>,
   document.getElementById('root')
 );

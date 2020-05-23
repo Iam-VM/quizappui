@@ -1,0 +1,237 @@
+/*mobile*/
+@media only screen and (max-width: 768px) {
+    .gameArea-question-render {
+        margin : 0vh 0vh;
+        height : 80vh;
+        width : 100%;
+        display : flex;
+        flex-direction : column;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+/*PC*/
+@media only screen and (min-width: 768px) {
+    .gameArea-question-render {
+        margin: 10vh 0vh;
+        height: 60vh;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+.gameScreen {
+    margin-top: 3rem;
+    height : 100%;
+    width : 100%
+}
+
+.gameRenderer {
+    display : flex;
+    flex-direction : column;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+}
+
+.questionHead {
+    display : flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.questionSubHead {
+    order : 1;
+    display : flex;
+    flex-direction: row;
+    justify-content: flex-start;
+}
+
+.questionHeadText {
+    margin-right: 2vw;
+    display: inline;
+    order : 1;
+    color: #d3d5d6;
+    font-family: "Montserrat", sans-serif;
+    font-size: medium;
+    letter-spacing: 0.04rem;
+    align-self: flex-start;
+}
+
+.counterContainer {
+    margin-left: 2vw;
+    order : 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.questionCounter {
+    order : 1;
+    display: inline;
+    font-weight: bold;
+    font-size: large;
+    font-family: "Montserrat", sans-serif;
+    color: #d3d5d6;
+    letter-spacing: 0.07rem;
+}
+
+.counterUnderLine {
+    order : 2;
+    align-self: flex-start;
+    border : none;
+    display : block;
+    width : 50%;
+    background-color : #F36D1A;
+    height : 1px;
+}
+
+.timerContainer {
+    margin: -5vh 5vw 0vh 0vw;
+    order : 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.timerHead {
+    color: #d3d5d6;
+    font-weight: lighter;
+    font-family: "Montserrat", sans-serif;
+}
+
+.timer {
+    align-self: center;
+    color: #d3d5d6;
+    font-weight: bold;
+    text-decoration: none;
+    font-size: 10vh;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.timerUnderLine {
+    align-self: flex-start;
+    margin-left:0.4rem;
+    border : none;
+    display : block;
+    width : 50%;
+    background-color : #F36D1A;
+    height : 1px;
+}
+
+
+
+.question {
+    margin : 8vh 0vw 3vh 0vw;
+    font-family: "Montserrat", sans-serif;
+    font-weight: bold;
+    letter-spacing: 0.02rem;
+    color: #d3d5d6;
+    font-size: medium;
+}
+
+.questionImage {
+
+}
+
+.optionsContainer {
+    margin-top: 2rem;
+    padding-right: 0px;
+    width: 100vw;
+    margin-left: -3vh;
+}
+
+.options {
+    list-style : none;
+    display : flex;
+    flex-direction : column;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+.optionInstant {
+    align-self: flex-start;
+    width: 100%;
+}
+
+.optionButton {
+    text-align: center;
+    border-radius: 0px;
+    border-bottom-style: solid;
+    border-bottom-color: #F36D1A;
+    border-right-style: none;
+    height : 10vh;
+    width : 90%;
+    font-size: medium;
+    font-weight: bold;
+    font-family : "Montserrat", sans-serif;
+    outline : none;
+    text-decoration: none;
+    background-color: #d3d5d6;
+    color: #343130;
+    transition: all 0.2s;
+}
+
+@media only screen and (min-width: 768px){
+
+    .optionsContainer {
+        padding-right: 0px;
+        width: 50vw;
+        margin-left: 20vw;
+    }
+
+    .options {
+        list-style : none;
+        display : flex;
+        flex-direction : column;
+        justify-content: flex-start;
+        align-items: flex-start;
+    }
+
+    .optionInstant {
+        align-self: flex-start;
+        width: 100%;
+    }
+
+    .optionButton {
+        text-align: center;
+        border-radius: 0px;
+        border-bottom-style: solid;
+        border-bottom-color: #F36D1A;
+        border-right-style: none;
+        height : 10vh;
+        width : 90%;
+        font-size: medium;
+        font-weight: bold;
+        font-family : "Montserrat", sans-serif;
+        outline : none;
+        text-decoration: none;
+        background-color: #d3d5d6;
+        color: #343130;
+        transition: all 0.2s;
+    }
+}
+
+.result {
+    height: 100%;
+    width: 100%;
+    background-color: #D3D5D6;
+    color: #343130;
+    font-size: medium;
+    font-family: "Montserrat", sans-serif;
+}
+
+
+
+
+
+
+
+
+
+
