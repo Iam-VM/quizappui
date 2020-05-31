@@ -9,7 +9,7 @@ const BodyText = (props) => {
                 <h2 className={'bodyText-head-quiz'}>Quiz</h2>
             </div>
             <UnderLine />
-            <h4 className={'bodyText-byLine'}>Some text goes here</h4>
+            <h4 className={'bodyText-byLine'}>Light up your brain</h4>
         </div>
     );
 };

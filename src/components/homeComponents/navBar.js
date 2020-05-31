@@ -1,17 +1,17 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
 import './home.css';
-import SignInButtonSmall from "./signInButton";
 
 const NavBar = (props) => {
     return(
         <div className={'navBar'}>
             <Link to={'/'} className={'navBar-logo'}>
                 <span>Salvos</span>
+                <div className={'salvos-logo-decoration'}>
+                    <div className={'salvos-logo-underline'}></div>
+                    <span className={'salvos-quiz-footer'}>Quiz</span>
+                </div>
             </Link>
-            <a href={'https://quizapp-server.herokuapp.com/auth/google'} className={'a'}>
-                <SignInButtonSmall />
-            </a>
         </div>
     );
 };

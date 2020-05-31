@@ -6,8 +6,11 @@ const OptionInstant = (props) => {
 	return (
         <li className={'optionInstant'}>
             <button className={'optionButton'} onClick={() => {
-                console.log('button clicked...');
-                props.checkAnswer(props.optionText);
+                if (props.netTime !== null) {
+                    const ratio = props.timer/props.netTime;
+                    props.checkAnswer(props.optionText, ratio, props.questionNumber);
+                    props.refreshTimer();
+                }
             }}>
                 {props.optionText}
             </button>

@@ -2,9 +2,7 @@ import React from 'react';
 import {BrowserRouter, Route, Switch} from 'react-router-dom';
 import './App.css';
 import Home from './components/home';
-import Play from './components/play';
-import ThankYou from './components/thankYou';
-import LimitExceeded from './components/limitExceeded';
+import Play from './components/playLevelTwo';
 import ErrorNotFound from './components/errorNotFound';
 
 
@@ -20,8 +18,6 @@ const App = () => {
         <Switch>
           <Route path='/' component={Home} exact />
           <Route path='/quiz/play' component={Play} exact />
-          <Route path={'/thankyou'} component={ThankYou} exact />
-          <Route path={'/limitexceeded'} component={LimitExceeded} exact />
           <Route component={ErrorNotFound} />
         </Switch>
       </BrowserRouter>
@@ -30,3 +26,4 @@ const App = () => {
 };
 
 export default App;
+

@@ -5,37 +5,51 @@ import QuestionCount from "./questionCount";
 import TimeOut from "./timeOut";
 import './playQuestion.css';
 
-//props: questionText(string), options(list of options), stateData.
+
 
 
 const GameRenderer = (props) => {
-    const [questionNumber, setQuestionNumber] = useState(props.questionNumber);
-    const [timer, setTimer] = useState(20);
-    const [isTimeOut, setIsTimeOut] = useState(false);
+    const [timer, setTimer] = useState(props.stateData.questions[props.progress] !== undefined ? props.stateData.questions[props.progress].time : null);
+    const [timeOut, setTimeOut] = useState(false);
 
     useEffect(() => {
-        if (timer === 0){
-            setIsTimeOut(true);
-        }
-        setTimeout(() => {
+        let id;
+        if (timer !== null) {
             if (timer > 0){
-                setTimer(timer - 1);
+                id = setInterval(() => setTimer(timer-1), 1200);
             }
-        }, 1000);
+            if (timer === 0) {
+                setTimeOut(true);
+            }
+        }
+
+
+        return () => {
+            clearInterval(id);
+        };
     }, [timer]);
 
-    const checkAnswer = (optionText) => {
-        props.checkAnswer(optionText);
-        setTimer(20);
+
+    const refreshTimer = () => {
+        if (props.questionNumber < props.stateData.questions.length) {
+            setTimer(props.stateData.questions[props.progress + 1].time);
+        }
     };
 
+    const checkAnswer = (optionText, nullParam) => {
+        props.checkAnswer(optionText, nullParam, props.questionNumber);
+        setTimeout(() => setTimeOut(false), 1000);
+        if (props.questionNumber < props.stateData.questions.length) {
+            setTimer(props.stateData.questions[props.progress + 1].time);
+        }
+    };
 
-    if (isTimeOut){
-        return <TimeOut checkAnswer={checkAnswer}/>;
+    if (timeOut) {
+        return <TimeOut time={4} checkAnswer={checkAnswer} />;
     }
-    else {
-        return(
-            <div className={'gameRenderer'}>
+
+    return(
+        <div className={'gameRenderer'}>
                 <div className={'questionHead'}>
                     <div className={'questionSubHead'}>
                         <span className={'questionHeadText'}>Question: </span>
@@ -47,16 +61,15 @@ const GameRenderer = (props) => {
                         <div className={'timerUnderLine'}></div>
                     </div>
                 </div>
-                <Question question={props.questionText} />
-                <div className={'optionsContainer'}>
-                    <ul className={'options'}>
-                        {props.options.map((option) => <OptionInstant  checkAnswer={checkAnswer} optionText={option} />)}
-                    </ul>
-                </div>
+            <Question question={props.questionText} />
+            {(props.haveImage === 'true') ? <img src={`https://quizapp-server.herokuapp.com/${props.questionNumber}.jpg`} className={'questionImage'} alt={'image'} /> : null}
+            <div className={'optionsContainer'}>
+                <ul className={'options'}>
+                    {props.options.map((option) => <OptionInstant  timer={timer} netTime={props.stateData.questions[props.progress] !== undefined ? props.stateData.questions[props.progress].time : null} refreshTimer={refreshTimer} checkAnswer={props.checkAnswer} optionText={option} questionNumber={props.questionNumber} />)}
+                </ul>
             </div>
-        );
-    }
-
+        </div>
+    );
 };
 
 export default GameRenderer;

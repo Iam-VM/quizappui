@@ -2,12 +2,10 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
-import {Provider} from 'react-redux';
 import {ApolloProvider} from 'react-apollo';
 import ApolloClient from 'apollo-boost';
 
 //TODO: do change this during production
-const API_DEV = 'http://localhost:4001/iamvmgraphqlapi';
 const API_PROD = 'https://quizapp-server.herokuapp.com/iamvmgraphqlapi';
 
 //apollo setup

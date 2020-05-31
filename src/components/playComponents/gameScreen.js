@@ -7,18 +7,20 @@ import './playQuestion.css';
 
 //add response array and showResults func in parent
 
+const answeredQuestionArray = [];
 const GameScreen = (props) => {
     const [triggerMutation, { data }] = useMutation(ADD_RESPONSE);
     const [progress, setProgress] = useState(props.progress); //changed count to progress
     const [questionNumber, setQuestionNumber] = useState(null);
+    const [haveImage, setHaveImage] = useState("");
     const [questionText, setQuestionText] = useState('');
     const [options, setOptions] = useState([]);
 
+
     useEffect(() => {
-        console.log(progress);
         if (progress < props.stateData.questions.length) {
-            console.log('inside if - useEffect' + progress);
             setQuestionText(props.stateData.questions[progress].question);
+            setHaveImage(props.stateData.questions[progress].haveImage);
             const optionsArray = [props.stateData.questions[progress].optionOne,
                 props.stateData.questions[progress].optionTwo,
                 props.stateData.questions[progress].optionThree,
@@ -27,44 +29,62 @@ const GameScreen = (props) => {
             setQuestionNumber(progress + 1);
         }
         if (progress === props.stateData.questions.length) {
-            console.log('showResults called...' + progress);
             props.showResults();
         }
     }, [progress]);
 
+
+
     const triggerNextQuestion = () => {
         setProgress(progress + 1);
-        console.log('triggerNxtquest called new' + progress);
     };
 
-    const addResponse = (response) => {
-        console.log('mutation' + progress);
+    const addResponse = (response, point) => {
         triggerMutation({
             variables : {ID : Cookies.get('user_id'),
             progress : questionNumber,
-            response : response}
-        }).then(() => {
-            console.log('mutation success' + progress);
-            props.responses.push(response);
-            setTimeout(() => triggerNextQuestion(), 500);
-        }).catch((err) => {console.log(err)});
+            response : response,
+            points : point}
+        });
     };
 
 
 
-    const checkAnswer = (optionText) => {
-        if (progress < props.stateData.questions.length){
-            console.log('reached here (1) ' + progress);
-            addResponse(optionText);
+
+
+    const checkAnswer = (optionText, ratio, qN) => {
+        if (progress < props.stateData.questions.length) {
+            if (!answeredQuestionArray.includes(qN)) {
+                answeredQuestionArray.push(qN);
+                if (ratio !== null) {
+                    if (optionText === props.stateData.questions[progress].correctOption) {
+                        let point = Math.round(ratio*100);
+                        addResponse(optionText, props.points + point);
+                        props.setPoints(props.points + point);
+                        setTimeout(() => triggerNextQuestion(), 500);
+                    }
+                    else {
+                        addResponse(optionText, props.points);
+                        setTimeout(() => triggerNextQuestion(), 500);
+                    }
+                }
+                else {
+                    addResponse(optionText, props.points);
+                    setTimeout(() => triggerNextQuestion(), 500);
+                }
+            }
         }
     };
+
 
     return (
         <div className={'gameScreen'}>
             <GameRenderer questionText={questionText}
                           stateData={props.stateData}
                           questionNumber={questionNumber}
+                          haveImage={haveImage}
                           options={options}
+                          progress={progress}
                           checkAnswer={checkAnswer}
                           totalQuestions={props.stateData.questions.length} />
         </div>

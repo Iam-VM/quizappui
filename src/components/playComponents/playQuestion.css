@@ -54,7 +54,7 @@
     margin-right: 2vw;
     display: inline;
     order : 1;
-    color: #d3d5d6;
+    color: #E8EAEE ;
     font-family: "Montserrat", sans-serif;
     font-size: medium;
     letter-spacing: 0.04rem;
@@ -62,7 +62,8 @@
 }
 
 .counterContainer {
-    margin-left: 2vw;
+    width:24vw;
+    margin-left: 1vw;
     order : 2;
     display: flex;
     flex-direction: column;
@@ -71,27 +72,33 @@
 }
 
 .questionCounter {
+    text-align: center;
+    align-self: flex-start;
+    width : 24vw;
     order : 1;
     display: inline;
     font-weight: bold;
     font-size: large;
     font-family: "Montserrat", sans-serif;
-    color: #d3d5d6;
+    color: #E8EAEE ;
     letter-spacing: 0.07rem;
 }
 
 .counterUnderLine {
+    margin-left: 0.5rem;
+    margin-bottom: -2px;
     order : 2;
     align-self: flex-start;
     border : none;
     display : block;
     width : 50%;
-    background-color : #F36D1A;
+    background-image: linear-gradient(to right, #30cfd0 0%, #330867 100%);
     height : 1px;
 }
 
 .timerContainer {
     margin: -5vh 5vw 0vh 0vw;
+    height : 18vh;
     order : 2;
     display: flex;
     flex-direction: column;
@@ -100,14 +107,17 @@
 }
 
 .timerHead {
-    color: #d3d5d6;
+    color: #E8EAEE ;
     font-weight: lighter;
     font-family: "Montserrat", sans-serif;
 }
 
 .timer {
+    text-align: center;
+    width: 25vw;
+    height: 12vh;
     align-self: center;
-    color: #d3d5d6;
+    color: #E8EAEE ;
     font-weight: bold;
     text-decoration: none;
     font-size: 10vh;
@@ -120,8 +130,76 @@
     border : none;
     display : block;
     width : 50%;
-    background-color : #F36D1A;
+    background-image: linear-gradient(to right, #30cfd0 0%, #330867 100%);
     height : 1px;
+}
+
+@media only screen and (min-width: 786px) {
+    .counterContainer {
+        height : 10vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        width : 10vw;
+        margin-left: 0px;
+    }
+
+    .questionCounter {
+        height: 27px;
+        font-size: 22px;
+        width: 8vw;
+        align-self: flex-start;
+        margin-left: -1rem;
+        margin-bottom: 3px;
+    }
+
+    .counterUnderLine {
+        order : 2;
+        align-self: flex-start;
+        border : none;
+        display : block;
+        width : 50%;
+        background-image: linear-gradient(to right, #30cfd0 0%, #330867 100%);
+        height : 1px;
+    }
+
+    .timerContainer {
+        margin: -3px 0vw 0vh 0vw;
+        width : 15vw;
+        order : 2;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+    }
+
+    .timerHead {
+        color: #E8EAEE ;
+        font-weight: lighter;
+        font-family: "Montserrat", sans-serif;
+    }
+
+    .timer {
+        height: 12vh;
+        width: 15vw;
+        align-self: center;
+        color: #E8EAEE ;
+        font-weight: bold;
+        text-decoration: none;
+        font-size: 10vh;
+        font-family: 'Montserrat', sans-serif;
+    }
+
+    .timerUnderLine {
+        align-self: center;
+        margin-left:0.4rem;
+        border : none;
+        display : block;
+        width : 50%;
+        background-image: linear-gradient(to right, #30cfd0 0%, #330867 100%);
+        height : 1px;
+    }
 }
 
 
@@ -131,12 +209,13 @@
     font-family: "Montserrat", sans-serif;
     font-weight: bold;
     letter-spacing: 0.02rem;
-    color: #d3d5d6;
+    color: #E8EAEE ;
     font-size: medium;
 }
 
 .questionImage {
-
+    align-self: center;
+    width: 85%;
 }
 
 .optionsContainer {
@@ -155,29 +234,35 @@
 }
 
 .optionInstant {
+    margin-bottom: 4px;
     align-self: flex-start;
     width: 100%;
 }
 
 .optionButton {
+    box-shadow : 4px 2px 10px black;
+    border-style : none;
     text-align: center;
-    border-radius: 0px;
-    border-bottom-style: solid;
-    border-bottom-color: #F36D1A;
-    border-right-style: none;
-    height : 10vh;
+    border-radius: 2px;
+    min-height: 10vh;
+    height : auto;
     width : 90%;
     font-size: medium;
     font-weight: bold;
     font-family : "Montserrat", sans-serif;
     outline : none;
     text-decoration: none;
-    background-color: #d3d5d6;
+    background-color:#E8EAEE ;
     color: #343130;
-    transition: all 0.2s;
+    transition: all 0.5s;
 }
 
-@media only screen and (min-width: 768px){
+.optionButton:active {
+    background-image: linear-gradient(to right, #30cfd0 0%, #330867 100%);
+    color: #E8EAEE ;
+}
+
+@media only screen and (min-width: 768px) {
 
     .optionsContainer {
         padding-right: 0px;
@@ -196,22 +281,22 @@
     .optionInstant {
         align-self: flex-start;
         width: 100%;
+        margin-bottom: 4px;
     }
 
     .optionButton {
+        border-radius: 2px;
         text-align: center;
-        border-radius: 0px;
-        border-bottom-style: solid;
-        border-bottom-color: #F36D1A;
-        border-right-style: none;
-        height : 10vh;
+        border-style: none;
+        height: auto;
+        min-height : 10vh;
         width : 90%;
         font-size: medium;
         font-weight: bold;
         font-family : "Montserrat", sans-serif;
         outline : none;
         text-decoration: none;
-        background-color: #d3d5d6;
+        background-color: #E8EAEE ;
         color: #343130;
         transition: all 0.2s;
     }
@@ -220,13 +305,81 @@
 .result {
     height: 100%;
     width: 100%;
-    background-color: #D3D5D6;
+    background-color: #E8EAEE ;
     color: #343130;
     font-size: medium;
     font-family: "Montserrat", sans-serif;
 }
 
+.timeOut {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
 
+.timeOutHead {
+    align-self: center;
+    font-family: "Montserrat", sans-serif;
+    font-size: xx-large;
+    color: #E8EAEE;
+}
+
+.timeOut-underline {
+    margin-top: -1.5rem;
+    margin-bottom: 1rem;
+    align-self: center;
+    border : none;
+    display : block;
+    width : 50%;
+    background-image: linear-gradient(to right, #30cfd0 0%, #330867 100%);
+    height : 1px;
+}
+
+.timeOutContent {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-family: "Montserrat", sans-serif;
+    font-size: large;
+    color: #E8EAEE;
+}
+
+.timeOutP {
+    align-self: center;
+    margin: 1rem 0rem 2rem 0rem;
+}
+
+.timeOutTime {
+    border-radius: 2px;
+    box-shadow : 4px 2px 10px black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 25vw;
+    height: 15vh;
+    background-color: #19191B;
+    align-self: center;
+}
+
+
+.timeOutTimeText {
+    font-family: "Montserrat", sans-serif;
+    font-size: 40px;
+    background: -webkit-linear-gradient(to right, #30cfd0 0%, #330867 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.a-signout {
+    text-decoration : none;
+
+}
+
+.resultDeveloper {
+    margin-top: 2.5rem;
+}
 
 
 
