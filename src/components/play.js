@@ -27,20 +27,25 @@ const Play = (props) => {
 
     stateData = {...data.user};
     stateData.questions = data.questions;
+    stateData.progress = stateData.progress + 1;
 
     return(
         <div className={'play'}>
-            <div className={'navBar'}>
-                <Link to={'/'} className={'navBar-logo'}>
-                    <span>Salvos</span>
-                    <div className={'salvos-logo-decoration'}>
-                        <div className={'salvos-logo-underline'}></div>
-                        <span className={'salvos-quiz-footer'}>Quiz</span>
+            <div className={'play-navBar'}>
+                {/*<Link to={'/'} className={'navBar-logo'}>*/}
+                {/*    <span>Unriddle</span>*/}
+                {/*    <div className={'salvos-logo-decoration'}>*/}
+                {/*        <div className={'salvos-logo-underline'}></div>*/}
+                {/*        <span className={'salvos-quiz-footer'}>-22</span>*/}
+                {/*    </div>*/}
+                {/*</Link>*/}
+                <div className={'helloName'}>
+                    <div className={'helloName-text'}>
+                        <span className={'helloName-hello'}>Hello,</span>
+                        <span className={'helloName-name'}>{`${stateData.firstName || `...`}`}</span>
                     </div>
-                </Link>
-                <span className={'helloName'}>
-                    {`Hello, ${stateData.firstName || `...`}`}
-                </span>
+                    <img src={stateData.picture} className={'helloName-image'} alt='dp' />
+                </div>
             </div>
             <DynamicGameArea className={'dynamicGameArea'} stateData={stateData} />
         </div>

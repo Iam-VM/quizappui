@@ -72,7 +72,6 @@
 }
 
 .questionCounter {
-    text-align: center;
     align-self: flex-start;
     width : 24vw;
     order : 1;
@@ -85,7 +84,6 @@
 }
 
 .counterUnderLine {
-    margin-left: 0.5rem;
     margin-bottom: -2px;
     order : 2;
     align-self: flex-start;
@@ -97,8 +95,10 @@
 }
 
 .timerContainer {
-    margin: -5vh 5vw 0vh 0vw;
-    height : 18vh;
+    width: 6rem;
+    margin-top: -3vh;
+    margin-right: 1.5rem;
+    height : 15vh;
     order : 2;
     display: flex;
     flex-direction: column;
@@ -113,16 +113,51 @@
 }
 
 .timer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-end;
+    font-weight: bolder;
+    margin-top: -5vh;
     text-align: center;
-    width: 25vw;
+    width: 6rem;
     height: 12vh;
     align-self: center;
     color: #E8EAEE ;
-    font-weight: bold;
     text-decoration: none;
     font-size: 10vh;
     font-family: 'Montserrat', sans-serif;
 }
+
+.timerTimeMin{
+    letter-spacing: 0.1rem;
+    height: 5vh;
+    width: 14vw;
+    margin-right: 5px;
+    font-size: 4vh;
+}
+
+.timerMinSecSeparator {
+    margin-right: 5px;
+    font-size: 4vh;
+}
+
+/*.timerMinLabel {*/
+/*    margin-right: 3px;*/
+/*    font-size: 2vh;*/
+/*}*/
+
+.timerTimeSec {
+    letter-spacing: 0.1rem;
+    height: 5vh;
+    width: 15vw;
+    margin-right: 3px;
+    font-size: 4vh;
+}
+
+/*.timerSecLabel {*/
+/*    font-size: 2vh;*/
+/*}*/
 
 .timerUnderLine {
     align-self: flex-start;
@@ -150,7 +185,6 @@
         font-size: 22px;
         width: 8vw;
         align-self: flex-start;
-        margin-left: -1rem;
         margin-bottom: 3px;
     }
 
@@ -165,7 +199,8 @@
     }
 
     .timerContainer {
-        margin: -3px 0vw 0vh 0vw;
+        margin-top: -3px;
+        margin-right: 0.8rem;
         width : 15vw;
         order : 2;
         display: flex;
@@ -181,6 +216,8 @@
     }
 
     .timer {
+        margin-top: -3vh;
+    	justify-content: center;
         height: 12vh;
         width: 15vw;
         align-self: center;
@@ -191,6 +228,17 @@
         font-family: 'Montserrat', sans-serif;
     }
 
+	.timerTimeMin{
+        margin-right: -0.8rem;
+        width: 5vw;
+    }
+
+    .timerTimeSec {
+        margin-left: -0.8rem;
+        width: 5vw;
+    }
+    
+   
     .timerUnderLine {
         align-self: center;
         margin-left:0.4rem;
@@ -205,12 +253,21 @@
 
 
 .question {
-    margin : 8vh 0vw 3vh 0vw;
+    margin : 5vh 0vw 3vh 0vw;
     font-family: "Montserrat", sans-serif;
     font-weight: bold;
     letter-spacing: 0.02rem;
     color: #E8EAEE ;
     font-size: medium;
+}
+
+.questionQ {
+    margin-right: 8px;
+    font-family: "Montserrat", sans-serif;
+    font-size: 20px;
+    background: -webkit-linear-gradient(to right, #30cfd0 0%, #330867 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 .questionImage {
@@ -262,6 +319,8 @@
     color: #E8EAEE ;
 }
 
+
+
 @media only screen and (min-width: 768px) {
 
     .optionsContainer {
@@ -299,6 +358,58 @@
         background-color: #E8EAEE ;
         color: #343130;
         transition: all 0.2s;
+    }
+}
+
+.answerTextContainer {
+	margin-top: 3rem;
+}
+
+.answerTextForm {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.answerTextLabel {
+    margin-left: 1rem;
+    margin-bottom: 6px;
+    align-self: flex-start;
+    color: #E8EAEE;
+    font-size: 15px;
+    letter-spacing: 0.06rem;
+    font-family: "Montserrat", sans-serif;
+}
+
+.answerTextInput {
+    font-weight: bold;
+    font-size: 13px;
+    font-family: "Montserrat", sans-serif;
+    width: 90%;
+    border-style: none;
+    border-radius: 4px;
+    height: 40px;
+    margin-bottom: 1rem;
+}
+
+.answerSubmitButton {
+    border-style: none;
+}
+
+@media only screen and (min-width: 786px) {
+    .answerTextContainer {
+    	margin-top: 5rem;
+        width: 50%;
+        align-self: center;
+    }
+    
+    .answerTextLabel {
+    	margin-left: 2rem;
+    }
+    
+    .answerTextInput {
+    	margin-bottom: 2rem;
     }
 }
 
@@ -378,7 +489,7 @@
 }
 
 .resultDeveloper {
-    margin-top: 2.5rem;
+    margin-top: 1.5rem;
 }
 
 

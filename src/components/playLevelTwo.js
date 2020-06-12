@@ -29,30 +29,34 @@ const Play = (props) => {
     stateData = {...data.user};
     stateData.questions = data.questions;
 
-    if (stateData.points < 500 && stateData.progress === 0) {
-        return <HaveNotPlayed />;
+    if (stateData.points < 500 && stateData.progress === -1) {
+        return <HaveNotPlayed stateData={stateData}/>;
     }
 
     if (stateData.points < 500) {
-        return <BelowCutOff points={stateData.points} />;
+        return <BelowCutOff points={stateData.points} stateData={stateData}/>;
     }
 
-    stateData.progress = stateData.progressLevelTwo;
+    stateData.progress = stateData.progressLevelTwo + 1;
     stateData.points = stateData.pointsLevelTwo;
 
     return(
         <div className={'play'}>
-            <div className={'navBar'}>
-                <Link to={'/'} className={'navBar-logo'}>
-                    <span>Salvos</span>
-                    <div className={'salvos-logo-decoration'}>
-                        <div className={'salvos-logo-underline'}></div>
-                        <span className={'salvos-quiz-footer'}>Quiz</span>
+            <div className={'play-navBar'}>
+                {/*<Link to={'/'} className={'navBar-logo'}>*/}
+                {/*    <span>Salvos</span>*/}
+                {/*    <div className={'salvos-logo-decoration'}>*/}
+                {/*        <div className={'salvos-logo-underline'}></div>*/}
+                {/*        <span className={'salvos-quiz-footer'}>Quiz</span>*/}
+                {/*    </div>*/}
+                {/*</Link>*/}
+                <div className={'helloName'}>
+                    <div className={'helloName-text'}>
+                        <span className={'helloName-hello'}>Hello,</span>
+                        <span className={'helloName-name'}>{`${stateData.firstName || `...`}`}</span>
                     </div>
-                </Link>
-                <span className={'helloName'}>
-                    {`Hello, ${stateData.firstName || `...`}`}
-                </span>
+                    <img src={stateData.picture} className={'helloName-image'} alt='dp' />
+                </div>
             </div>
             <DynamicGameArea className={'dynamicGameArea'} stateData={stateData} />
         </div>

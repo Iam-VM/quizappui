@@ -5,14 +5,14 @@
     margin : 0px;
 }
 
-.navBar {
+.play-navBar {
     display : flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: flex-end;
     align-items : center;
-    height : 6vh;
+    height : 3rem;
     width : 100%;
-    margin-top : 0vh;
+    margin-top : 1rem;
     text-decoration: none;
     outline: none;
 }
@@ -32,17 +32,43 @@
 }
 
 .helloName {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    flex: 1;
+    align-self: flex-end;
+    margin-top: 0rem;
     text-align: right;
     color: #E8EAEE ;
     letter-spacing : 0.04rem;
     text-decoration : none;
     outline : none;
     transition : all 0.2s;
-    padding : 0.4rem 0.9rem;
-    font-size: 2vh;
+    padding : 0.4rem 0.2rem;
+    height: 100%;
+    font-size: 16px;
     width : 50vh;
     font-family: 'Montserrat', sans-serif;
-    font-weight: bold;
+}
+
+.helloName-text {
+    margin-right: 0.3rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+.helloName-hello {
+    padding-right: 0.2rem;
+}
+
+.helloName-image {
+    box-shadow : 4px 2px 10px black;
+    border-radius: 3px;
+    height: 50px;
+    width: 50px;
 }
 
 .dynamicGameArea {
@@ -209,7 +235,7 @@
         border : none;
         display : block;
         width : 40%;
-        background-image: linear-gradient(to right, #30cfd0 0%, #330867 100%);
+        background-image: linear-gradient(90deg, #FDBB2D 0%, #3A1C71 100%);
         height : 1px;
     }
 }
@@ -252,12 +278,33 @@
 
 
 .studentFormPhoneInput {
+    font-weight: bold;
+    font-size: 13px;
+    font-family: "Montserrat", sans-serif;
     height :40px;
     width: 90%;
     border-radius: 4px;
     border-style: none;
 }
 
+.studentFormCollege {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin-left: 4px;
+    align-self: flex-start;
+    margin-bottom: 2rem;
+}
+
+.studentFormCollegeInput {
+    font-weight: bold;
+    font-size: 13px;
+    font-family: "Montserrat", sans-serif;
+    height :40px;
+    width: 90%;
+    border-radius: 4px;
+    border-style: none;
+}
 
 .studentFormBranch {
     width: 100%;
@@ -269,6 +316,9 @@
 }
 
 .studentFormBranchInput {
+    font-weight: bold;
+    font-size: 13px;
+    font-family: "Montserrat", sans-serif;
     border-style: none;
     border-radius: 4px;
     height :40px;
@@ -285,6 +335,9 @@
 }
 
 .studentFormYearInput {
+    font-weight: bold;
+    font-size: 13px;
+    font-family: "Montserrat", sans-serif;
     border-style: none;
     border-radius: 4px;
     height :40px;
@@ -314,6 +367,10 @@
         align-self: center;
     }
 
+    .studentFormCollege {
+        width: 50%;
+        align-self: center;
+    }
 
     .studentFormBranch {
         width: 50%;

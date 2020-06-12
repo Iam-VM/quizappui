@@ -22,7 +22,7 @@ const DynamicGameArea = (props) => {
     const showResults = () => {
         setShowResultState(true);
     };
-    if (props.stateData.progress === props.stateData.questions.length){
+    if (props.stateData.progress >= props.stateData.questions.length){
         return <Result points={points} />;
     }
 
@@ -33,7 +33,7 @@ const DynamicGameArea = (props) => {
         if (!startClicked){
             return (
                 <div className={'gameArea'}>
-                    <p className={'start-text'}>You are ready to go</p>
+                    <p className={'start-text'}>Let the battle begin!</p>
                     <div className={'start-underLine'}></div>
                     <div className={'button start-button'} onClick={() => setStartClicked(true)}>Start Game</div>
                 </div>

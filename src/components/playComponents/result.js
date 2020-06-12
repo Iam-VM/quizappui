@@ -8,7 +8,7 @@ const Result = (props) => {
             <h2 className={'limitExceededHead'}>Quiz Completed!</h2>
             <div className={'limitExceeded-underline'}></div>
             <h3 className={'limitExceededSubHead'}>Finished it like a <span
-                className={'limitExceeded-ninja'}>Ninja!</span></h3>
+                className={'limitExceeded-ninja'}>Warrior!</span></h3>
             <div className={'pointsContainer'}>
                 <span className={'pointsHead'}>Your Score</span>
                 <span className={'pointsCount'}>{props.points}</span>

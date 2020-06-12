@@ -6,10 +6,10 @@ const NavBar = (props) => {
     return(
         <div className={'navBar'}>
             <Link to={'/'} className={'navBar-logo'}>
-                <span>Salvos</span>
+                <span className={'salvos-navBarLogoText'}>UNRIDDLE - 20</span>
                 <div className={'salvos-logo-decoration'}>
                     <div className={'salvos-logo-underline'}></div>
-                    <span className={'salvos-quiz-footer'}>Quiz</span>
+                    {/*<span className={'salvos-quiz-footer'}>Quiz</span>*/}
                 </div>
             </Link>
         </div>

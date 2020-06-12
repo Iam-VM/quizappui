@@ -1,10 +1,10 @@
 import React from 'react';
-import {FaGoogle} from 'react-icons/fa';
+import {GrGoogle} from 'react-icons/gr';
 
 const SignInButton = (props) => {
     return(
         <div className={'button'}>
-            <FaGoogle className='button-logo' />
+            <GrGoogle className='button-logo' />
             <p className={'button-text'}>Sign In</p>
         </div>
     );

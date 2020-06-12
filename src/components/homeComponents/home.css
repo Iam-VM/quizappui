@@ -16,6 +16,7 @@
 }
 
 .navBar{
+    margin-top: -1rem;
     display : flex;
     flex-direction: row;
     justify-content: space-between;
@@ -27,7 +28,7 @@
 
 .navBar-logo {
     margin-left : 0rem;
-    margin-top: 1.5rem;
+    margin-top: 0.8rem;
     color: #E8EAEE ;
     letter-spacing : 0.07rem;
     text-decoration : none;
@@ -39,10 +40,15 @@
     font-weight: bold;
 }
 
+.salvos-navBarLogoText {
+    font-family: "Montserrat", sans-serif;
+    font-size: 4vh;
+}
+
 .salvos-logo-decoration {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: flex-start;
 }
 
 .salvos-logo-underline {
@@ -51,7 +57,7 @@
     border : none;
     display : block;
     width : 50%;
-    background-image: linear-gradient(to right, #30cfd0 0%, #330867 100%);
+    background-image: linear-gradient(90deg, #FDBB2D 0%, #3A1C71 100%);
     height : 1px;
 }
 
@@ -60,7 +66,6 @@
     margin-top: -8px;
     align-self: flex-start;
     font-size: 14px;
-    margin-left: 3px;
 }
 
 .a {
@@ -106,7 +111,7 @@
     outline: none;
 }
 
-.button:hover {
+.button:active {
     background: -webkit-linear-gradient(to right, #30cfd0 0%, #330867 100%);;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -118,7 +123,7 @@
     }
 
     .button-logo {
-        margin-right: 0.5rem;
+        margin-right: 1rem;
         height : 20px;
         width : 20px;
         color : #E8EAEE ;
@@ -126,7 +131,7 @@
         outline: none;
     }
 
-    .button:hover {
+    .button:active {
         width : 43vw;
         background: -webkit-linear-gradient(90deg, #FDBB2D 0%, #3A1C71 100%);
         -webkit-background-clip: text;
@@ -135,9 +140,9 @@
 }
 
 .button-logo {
-    margin-right: 0.5rem;
-    height : 20px;
-    width : 20px;
+    margin-right: 1rem;
+    height : 16px;
+    width : 16px;
     color : #E8EAEE ;
     text-decoration: none;
     outline: none;
@@ -206,21 +211,23 @@
     border : none;
     display : block;
     width : 50%;
-    background-image: linear-gradient(to right, #30cfd0 0%, #330867 100%);
+    background-image: linear-gradient(90deg, #FDBB2D 0%, #3A1C71 100%);
     height : 1px;
 }
 
 .bodyText-byLine {
     margin-top: 7px;
     margin-left : 0.5rem;
-    color: #E8EAEE ;
+    background: -webkit-linear-gradient(90deg, #FDBB2D 0%, #3A1C71 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
     letter-spacing : 0.07rem;
     text-decoration : none;
     outline : none;
     transition : all 0.2s;
     font-size: 3vh;
     font-family: 'Montserrat', sans-serif;
-    font-weight: normal;
+    font-weight: bolder;
 }
 
 .home-signInButtonLarge {
@@ -252,8 +259,46 @@
     letter-spacing: 0.1rem;
 }
 
+.home-logos {
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.mhmLogoContainer {
+    margin-left: -1rem;
+    align-self: center;
+}
+
+.mhmImage {
+    width: 100px;
+    height: 71px;
+}
+
+.cevLogoContainer {
+    align-self: center;
+}
+
+.cevImage {
+    margin-right: 0.4rem;
+    width: 40px;
+    height: 40px;
+}
+
+.ieeeLogoContainer {
+    margin-left: -1.5rem;
+    align-self: center;
+}
+
+.ieeeImage {
+    width : 75px;
+    height: 22px;
+}
+
 .developer {
-    margin-top: 12vh;
+    margin-top: -2rem;
     width : 100%;
     height: available;
     align-self: center;
@@ -270,7 +315,7 @@
     border : none;
     display : block;
     width : 100%;
-    background-image: linear-gradient(to right, #30cfd0 0%, #330867 100%);
+    background-image: linear-gradient(90deg, #FDBB2D 0%, #3A1C71 100%);
     height : 1px;
 }
 
@@ -289,6 +334,10 @@
 }
 
 @media  only screen and (min-width: 786px) {
+
+    .home-logos {
+        margin-top: 4rem;
+    }
     .bodyText {
         display: flex;
         flex-direction: column;
@@ -341,7 +390,7 @@
         border : none;
         display : block;
         width : 30%;
-        background-image: linear-gradient(to right, #30cfd0 0%, #330867 100%);
+        background-image: linear-gradient(90deg, #FDBB2D 0%, #3A1C71 100%);
         height : 1px;
     }
 
@@ -390,7 +439,7 @@
     }
 
     .developer {
-        margin-top: 2rem;
+        margin-top: -2rem;
         width : 100%;
         height: available;
         align-self: center;
@@ -417,6 +466,4 @@
         letter-spacing: 0.15rem;
     }
 }
-
-
 

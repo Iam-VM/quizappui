@@ -13,6 +13,7 @@ const GameScreen = (props) => {
     const [progress, setProgress] = useState(props.progress); //changed count to progress
     const [questionNumber, setQuestionNumber] = useState(null);
     const [haveImage, setHaveImage] = useState("");
+    const [haveOptions, setHaveOptions] = useState("");
     const [questionText, setQuestionText] = useState('');
     const [options, setOptions] = useState([]);
 
@@ -21,6 +22,7 @@ const GameScreen = (props) => {
         if (progress < props.stateData.questions.length) {
             setQuestionText(props.stateData.questions[progress].question);
             setHaveImage(props.stateData.questions[progress].haveImage);
+            setHaveOptions(props.stateData.questions[progress].haveOptions);
             const optionsArray = [props.stateData.questions[progress].optionOne,
                 props.stateData.questions[progress].optionTwo,
                 props.stateData.questions[progress].optionThree,
@@ -57,8 +59,9 @@ const GameScreen = (props) => {
             if (!answeredQuestionArray.includes(qN)) {
                 answeredQuestionArray.push(qN);
                 if (ratio !== null) {
-                    if (optionText === props.stateData.questions[progress].correctOption) {
-                        let point = Math.round(ratio*100);
+                    const correctOptionsArray = props.stateData.questions[progress].correctOption.map(option => option.toLowerCase());
+                    if (correctOptionsArray.includes(optionText.toLowerCase())) {
+                        let point = 200 + Math.round(ratio*100);
                         addResponse(optionText, props.points + point);
                         props.setPoints(props.points + point);
                         setTimeout(() => triggerNextQuestion(), 500);
@@ -83,6 +86,7 @@ const GameScreen = (props) => {
                           stateData={props.stateData}
                           questionNumber={questionNumber}
                           haveImage={haveImage}
+                          haveOptions={haveOptions}
                           options={options}
                           progress={progress}
                           checkAnswer={checkAnswer}

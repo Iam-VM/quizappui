@@ -3,7 +3,10 @@ import './playQuestion.css';
 
 const Question = (props) => {
 	return (
-        <p className={'question'}>{`Q.  ${props.question}`}</p>
+	    <div className={'question'}>
+            <span className={'questionQ'}>Q.</span>
+            {props.question}
+	    </div>
     );
 };
 
